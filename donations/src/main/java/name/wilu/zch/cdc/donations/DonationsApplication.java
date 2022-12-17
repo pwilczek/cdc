@@ -1,4 +1,4 @@
-package name.wilu.zch.cdc;
+package name.wilu.zch.cdc.donations;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-public class CdcApplication {
+public class DonationsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CdcApplication.class, args);
+        SpringApplication.run(DonationsApplication.class, args);
     }
 
     @RestController
@@ -21,5 +21,4 @@ public class CdcApplication {
         }
 
     }
-
 }

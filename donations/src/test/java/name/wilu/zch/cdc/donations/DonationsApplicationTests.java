@@ -1,13 +1,12 @@
-package name.wilu.zch.cdc;
+package name.wilu.zch.cdc.donations;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CdcApplicationTests {
+class DonationsApplicationTests {
 
 	@Test
 	void contextLoads() {
 	}
-
 }
