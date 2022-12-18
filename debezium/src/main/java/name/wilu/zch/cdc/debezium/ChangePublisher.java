@@ -16,7 +16,7 @@ class ChangePublisher {
     //
     final List<EventHandler> handlers;
 
-    public void publish(RecordChangeEvent<SourceRecord> event) {
+    void publish(RecordChangeEvent<SourceRecord> event) {
         log.info("Got new event {}", event);
         Struct change = (Struct) event.record().value();
         Struct state = (Struct) change.get(AFTER);

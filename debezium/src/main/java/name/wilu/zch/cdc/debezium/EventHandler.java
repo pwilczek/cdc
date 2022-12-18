@@ -8,8 +8,8 @@ abstract class EventHandler {
     abstract boolean canTake(Struct event);
     abstract void take(Struct event);
 
-    protected String value(Struct after, String name) {
-        return after.get(name).toString();
+    protected String value(Struct state, String name) {
+        return state.get(name).toString();
     }
 
     protected boolean isEvent(Struct state, String name) {

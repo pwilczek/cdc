@@ -13,18 +13,28 @@ import static name.wilu.zch.cdc.debezium.EventBalance.EventBalanceKey;
 @Service @RequiredArgsConstructor @Slf4j
 class EventService {
     //
-    final RedisTemplate redisTemplate;
+    final RedisTemplate<String, EventBalance> redisTemplate;
 
     List<EventBalance> events() {
         return repo().values(EventBalanceKey);
     }
 
-    void addEvent(EventBalance event) {
-        if (repo().putIfAbsent(EventBalanceKey, event.id, event)) log.info("Event added");
-        else log.info("Event already registered");
+    EventBalance addEvent(EventBalance event) {
+        if (repo().putIfAbsent(EventBalanceKey, event.id, event)) log.info("Event added {}", event);
+        else log.info("Event already registered {}", event);
+        return event;
     }
 
-    private HashOperations repo() {
+    EventBalance addDonation(long eventId, long amount) {
+        EventBalance maybe = repo().get(EventBalanceKey, eventId);
+        if (maybe == null) throw new IllegalStateException("Can't find id " + eventId);
+        EventBalance balance = maybe.donate(amount);
+        repo().put(EventBalanceKey, eventId, balance);
+        log.info("Donation added {}", balance);
+        return balance;
+    }
+
+    private HashOperations<String, Long, EventBalance> repo() {
         return redisTemplate.opsForHash();
     }
 }

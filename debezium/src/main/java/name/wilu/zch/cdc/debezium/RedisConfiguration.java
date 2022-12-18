@@ -14,8 +14,8 @@ class RedisConfiguration {
     }
 
     @Bean
-    RedisTemplate<String, Object> redisTemplate() {
-        RedisTemplate<String, Object> template = new RedisTemplate<>();
+    RedisTemplate<String, EventBalance> redisTemplate() {
+        RedisTemplate<String, EventBalance> template = new RedisTemplate<>();
         template.setConnectionFactory(jedisConnectionFactory());
         return template;
     }

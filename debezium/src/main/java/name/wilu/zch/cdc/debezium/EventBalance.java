@@ -16,4 +16,12 @@ class EventBalance implements Serializable {
     @Id Long id;
     Long balance;
     String name;
+
+    /**
+     * This is unsafe
+     */
+    EventBalance donate(long amount) {
+        balance = balance + amount;
+        return this;
+    }
 }
