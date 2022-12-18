@@ -1,4 +1,4 @@
-package name.wilu.zch.cdc.donations.domain;
+package name.wilu.zch.cdc.donations;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

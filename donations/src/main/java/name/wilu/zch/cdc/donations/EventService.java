@@ -1,4 +1,4 @@
-package name.wilu.zch.cdc.donations.domain;
+package name.wilu.zch.cdc.donations;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.repository.JpaRepository;
