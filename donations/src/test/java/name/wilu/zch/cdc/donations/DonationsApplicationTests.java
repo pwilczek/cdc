@@ -3,10 +3,10 @@ package name.wilu.zch.cdc.donations;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class DonationsApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 }

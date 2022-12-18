@@ -1,12 +1,12 @@
-package name.wilu.zch.cdc;
+package name.wilu.zch.cdc.debezium;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
+//@SpringBootTest
 class DebeziumApplicationTests {
 
-	@Test
+//	@Test
 	void contextLoads() {
 	}
 
