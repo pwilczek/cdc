@@ -27,7 +27,7 @@ class EventService {
 
     EventBalance addDonation(long eventId, long amount) {
         EventBalance maybe = repo().get(EventBalanceKey, eventId);
-        if (maybe == null) throw new IllegalStateException("Can't find id " + eventId);
+        if (maybe == null) throw new IllegalStateException("Can't find event id " + eventId);
         EventBalance balance = maybe.donate(amount);
         repo().put(EventBalanceKey, eventId, balance);
         log.info("Donation added {}", balance);

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController @RequestMapping("/balance")
 @Slf4j @RequiredArgsConstructor
 class EventBalanceController {
@@ -14,7 +16,7 @@ class EventBalanceController {
     final EventService service;
 
     @GetMapping
-    ResponseEntity<?> events() {
+    ResponseEntity<List<EventBalance>> events() {
         return ResponseEntity.ok(service.events());
     }
 }

@@ -17,7 +17,7 @@ import java.util.concurrent.Executors;
 
 @Component @Slf4j
 class ChangeListener {
-
+    //
     private final Executor executor = Executors.newSingleThreadExecutor();
     //
     private final DebeziumEngine<RecordChangeEvent<SourceRecord>> engine;
@@ -47,5 +47,4 @@ class ChangeListener {
         log.info("Stopping debezium engine");
         if (engine != null) engine.close();
     }
-
 }
