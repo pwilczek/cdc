@@ -1,0 +1,12 @@
+server:
+  port: 8090
+  servlet.context-path: /balance
+donations.db:
+  host: 127.0.0.1
+  port: 3306
+  name: donations
+  username: root
+  password: root
+redis:
+  host: 127.0.0.1
+  port: 6379

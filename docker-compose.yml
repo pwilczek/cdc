@@ -22,8 +22,13 @@ services:
 #      - 8080:8080
 #    depends_on:
 #      - mysql-donations
-#  debezium:
-#    container_name: debezium
-#    image: debezium
+#      - redis-donations
+#  balance:
+#    container_name: balance
+#    image: balance
+#    ports:
+#      - 8090:8090
 #    depends_on:
 #      - mysql-donations
+#      - redis-donations
+#      - donations
