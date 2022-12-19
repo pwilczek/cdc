@@ -1,3 +1,8 @@
+## Remarks
+This is just a fast prototype of CDC (https://en.wikipedia.org/wiki/Change_data_capture) with debezium. Implementation is rough and has cavities but general idea was demonstrated.
+
+The purpose: _Donation app is write only, it should reliably accept new donations in ACID way. Balance app is read only, it presents totals for donation events._
+
 ## Steps to run
 1. Execute `docker-compose up`
 2. Run `DonationsApplication`
@@ -100,6 +105,3 @@ returns
 1. Donation and Balance were commented out in `docker-compose.yml` due to startup dependency issue. This should be resolved with sth like `wait-for-it`.
 2. `name.wilu.zch.cdc.balance.EventHandler.isEvent` and `name.wilu.zch.cdc.balance.EventHandler.canTake` should be a bit more sophisticated.
 3. `name.wilu.zch.cdc.balance.EventService.addDonation` is unsafe.
-
-## Remarks
-This is just a fast prototype of CDC with debezium. Implementation is rough and has cavities but general idea was demonstrated.
